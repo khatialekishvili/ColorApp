@@ -1,0 +1,12 @@
+<div class="color-list">
+  <h2>Color List</h2>
+
+  <input [(ngModel)]="newColor" placeholder="Enter a color" />
+  <button (click)="addColor()">Add Color</button>
+
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+  <div class="color-card" *ngFor="let color of colorList" [ngStyle]="{'background-color': color}">
+    <div class="color-card-content" [highlight]="color">{{ color | changecolor }}</div>
+  </div>
+</div>
